@@ -17,7 +17,7 @@ export class UpdateBookComponent implements OnInit {
     let bookId:number = 0;
     this._activatedRoute.params.subscribe(data => {
       bookId = data['id'] ;
-      console.log("Book id to be update:"+bookId);
+      /*console.log("Book id to be update:"+bookId);*/
       this._service.getBook(bookId).subscribe(resp =>{
         this.book = resp;
       })

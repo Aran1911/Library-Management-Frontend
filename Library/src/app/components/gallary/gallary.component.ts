@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { faYoutube, faFacebook, faTwitter, faInstagram, faLinkedin, faLinkedinIn, faPinterest } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope, faQrcode } from '@fortawesome/free-solid-svg-icons';
+import { faYoutube, faFacebook, faTwitter, faInstagram, faLinkedin, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope, faQrcode, faP } from '@fortawesome/free-solid-svg-icons';
 import { Image } from 'src/app/classes/image';
-
 @Component({
-  selector: 'app-galary',
-  templateUrl: './galary.component.html',
-  styleUrls: ['./galary.component.css']
+  selector: 'app-gallary',
+  templateUrl: './gallary.component.html',
+  styleUrls: ['./gallary.component.css']
 })
-export class GalaryComponent implements OnInit {
+export class GallaryComponent implements OnInit {
 
   constructor() { }
 
@@ -31,5 +30,5 @@ export class GalaryComponent implements OnInit {
   faQrcode = faQrcode;
   faLinkedin = faLinkedin;
   faLinkedinIn = faLinkedinIn;
-  faPinterest = faPinterest;
+  faPinterest = faP
 }

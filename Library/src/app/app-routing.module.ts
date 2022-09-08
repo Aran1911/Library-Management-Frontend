@@ -4,7 +4,6 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ActivitesComponent } from './components/activites/activites.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { DonateComponent } from './components/donate/donate.component';
-import { GalaryComponent } from './components/galary/galary.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
@@ -14,6 +13,7 @@ import { ViewAllBooksComponent } from './components/view-all-books/view-all-book
 import { AddNewBookComponent } from './components/add-new-book/add-new-book.component';
 import { UpdateBookComponent } from './components/update-book/update-book.component';
 import { DeleteBookComponent } from './components/delete-book/delete-book.component';
+import { GallaryComponent } from './components/gallary/gallary.component';
 
 
 const routes: Routes = [
@@ -21,10 +21,10 @@ const routes: Routes = [
   {path:'activites',component:ActivitesComponent},
   {path:'admin',component:AdminComponent},
   {path:'login',component:LoginComponent},
-  {path:'galary',component:GalaryComponent},
+  {path:'gallary',component:GallaryComponent},
   {path:'donate',component:DonateComponent},
   {path:'about',component:AboutUsComponent},
-  {path:'forgot',component:ForgotPasswordComponent},
+  {path:'forgotpassword',component:ForgotPasswordComponent},
   {path:'newUser',component:NewUserComponent},
   {path:'viewAll',component:ViewAllBooksComponent},
   {path:'addNew',component:AddNewBookComponent},

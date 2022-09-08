@@ -11,12 +11,6 @@
               </label>
               <input formControlName="username" type="text" name="username" required  class="form-control"
                placeholder="Username">
-              <!--
-                <small class="text-danger"
-                  [class.d-none]="username.valid || username.untouched || loginForm.submitted">
-                  Username is required
-              </small>
-              -->
           </div>
 
 
@@ -26,54 +20,14 @@
               </label>
               <input formControlName ="password" type="password" name="password" required  class="form-control"
                 placeholder="password">
-                  <br>
-              <!--
-                <small class="text-danger"
-                  [class.d-none]="password.valid || password.untouched || loginForm.submitted">
-                  Password is required
-              </small>
-              -->
           </div>
-
           <br>
-
+          <p>Are you new?<a routerLink="../newUser">Register here</a></p>
           <button class="btn btn-primary" type="submit" [disabled]="loginForm.invalid" style="float: right;">Login</button>
-
+          <a href=""class="btn btn-danger" routerLink="../forgotpassword">Forgot password</a>
 
       </form>
   </div>
 </div>
 
-<!--
-  <span></span>
-  <div class="d-flex flex-column h-100">
 
-    <footer class="w-100 py-4 flex-shrink-0">
-      <div class="container py-4">
-          <div class="row gy-4 gx-5">
-              <div class="col-lg-4 col-md-6">
-                  <h5 class="h1 text-white">Library</h5>
-                  <p class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-                  <p class="small text-muted mb-0">&copy; Copyrights. All rights reserved. <a class="text-primary" href="#">LibraryNAme.com</a></p>
-              </div>
-              <div class="col-lg-2 col-md-6">
-
-                  <ul class="list-unstyled text-muted" >
-                      <li><a href="https://www.youtube.com/"><fa-icon [icon]="faYoutube"  class="icons" id="youtube"></fa-icon></a>
-                      <li><a href="https://www.facebook.com/"><fa-icon [icon]="faFacebook" class="icons" id="facebook"></fa-icon></a></li>
-                      <li><a href="https://www.twitter.com"><fa-icon [icon]="faTwitter" class="icons" id="twitter"></fa-icon></a></li>
-                      <li><a href="https://www.instagram.com"> <fa-icon [icon]="faInstagram" class="icons" id="instagram"></fa-icon></a></li>
-                      <li><a href="https://www.gmail.com"><fa-icon [icon]="faEnvelope" class="icons" id="gmail"></fa-icon></a></li>
-                      <li><a href="https://lk.linkedin.com/"><fa-icon [icon]="faLinkedin" class="icons" id="linkedin"></fa-icon></a></li>
-                      <li><a href="https://lk.linkedin.com/"><fa-icon [icon]="faPinterest" class="icons" id="pinterest"></fa-icon></a></li>
-                  </ul>
-              </div>
-              <div class="col-lg-4 col-md-6">
-                  <h5 class="text-white mb-3">Vision</h5>
-                  <p class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-              </div>
-          </div>
-      </div>
-  </footer>
-</div>
--->

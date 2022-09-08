@@ -1,18 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { faYoutube, faFacebook, faTwitter, faInstagram, faLinkedin, faLinkedinIn, faPinterest } from '@fortawesome/free-brands-svg-icons';
+import {
+  faYoutube,
+  faFacebook,
+  faTwitter,
+  faInstagram,
+  faLinkedin,
+  faLinkedinIn,
+  faPinterest,
+} from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faQrcode } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-activites',
   templateUrl: './activites.component.html',
-  styleUrls: ['./activites.component.css']
+  styleUrls: ['./activites.component.css'],
 })
 export class ActivitesComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   faYoutube = faYoutube;
   faFacebook = faFacebook;
   faTwitter = faTwitter;
@@ -22,5 +28,4 @@ export class ActivitesComponent implements OnInit {
   faLinkedin = faLinkedin;
   faLinkedinIn = faLinkedinIn;
   faPinterest = faPinterest;
-
 }

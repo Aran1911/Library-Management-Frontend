@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomeComponent } from './components/home/home.component';
-import { GalaryComponent } from './components/galary/galary.component';
 import { DonateComponent } from './components/donate/donate.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ActivitesComponent } from './components/activites/activites.component';
@@ -28,6 +27,7 @@ import { IgxAvatarModule } from 'igniteui-angular';
 import { MatTableModule } from '@angular/material/table';
 import { DeleteBookComponent } from './components/delete-book/delete-book.component';
 import { UserComponent } from './User/user/user.component';
+import { GallaryComponent } from './components/gallary/gallary.component';
 
 
 //I keep the new line
@@ -35,7 +35,6 @@ import { UserComponent } from './User/user/user.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    GalaryComponent,
     DonateComponent,
     AboutUsComponent,
     ActivitesComponent,
@@ -49,6 +48,7 @@ import { UserComponent } from './User/user/user.component';
     UpdateBookComponent,
     DeleteBookComponent,
     UserComponent,
+    GallaryComponent,
     
   ],
   imports: [

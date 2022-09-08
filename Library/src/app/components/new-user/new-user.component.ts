@@ -1,18 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { faYoutube, faFacebook, faTwitter, faInstagram, faLinkedin, faLinkedinIn, faPinterest } from '@fortawesome/free-brands-svg-icons';
+import {
+  faYoutube,
+  faFacebook,
+  faTwitter,
+  faInstagram,
+  faLinkedin,
+  faLinkedinIn,
+  faPinterest,
+} from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faQrcode } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-new-user',
   templateUrl: './new-user.component.html',
-  styleUrls: ['./new-user.component.css']
+  styleUrls: ['./new-user.component.css'],
 })
 export class NewUserComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   onSubmit() {
     console.log();
   }
