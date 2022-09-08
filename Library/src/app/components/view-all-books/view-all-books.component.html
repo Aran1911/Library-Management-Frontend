@@ -1,0 +1,26 @@
+<div class="mt-5">
+  <table class="table table-bordered" style="width: 80%; margin-left: 10%;margin-right: 10%;">
+    <thead>
+      <tr>
+        <th>Book Id</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Cost</th>
+        <th >Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody class="tbody">
+      <tr *ngFor="let b of books">
+        <td>{{b.bookId}}</td>
+        <td>{{b.title}}</td>
+        <td>{{b.authorName}}</td>
+        <td>{{b.cost | currency:'USD'}}</td>
+        <td><a [routerLink]="['/update',b.bookId]" class="btn btn-primary">Update</a></td>
+        <td><a [routerLink]="['/delete',b.bookId]" class="btn btn-danger">Delete</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+

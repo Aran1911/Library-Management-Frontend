@@ -1,0 +1,65 @@
+<div class="card">
+    <div class="card-header">
+        <h2>Udate books details</h2>
+    </div>
+    <div class="card-body">
+        <form #bookUpdateForm="ngForm" novalidate (ngSubmit)="onsubmit()" spellcheck="false">
+
+            <div class="form-group">
+                <label>
+                    Book Id
+                </label>
+                <input type="text" name="bookId" required #bookId="ngModel" class="form-control"
+                    [class.is-invalid]="bookId.touched && bookId.invalid && !bookUpdateForm.submitted"
+                    [(ngModel)]="book.bookId">
+                <small class="text-danger"
+                    [class.d-none]="bookId.valid || bookId.untouched || bookUpdateForm.submitted">
+                    Book Id is required
+                </small>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    Book Title
+                </label>
+                <input type="text" name="title" required #title="ngModel" class="form-control"
+                    [class.is-invalid]="title.touched && title.invalid && !bookUpdateForm.submitted"
+                    [(ngModel)]="book.title">
+                <small class="text-danger"
+                    [class.d-none]="title.valid || title.untouched || bookUpdateForm.submitted">
+                    Book title name is required
+                </small>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    Author name
+                </label>
+                <input type="text" name="authorName" required #authorName="ngModel" class="form-control"
+                    [class.is-invalid]="authorName.touched && authorName.invalid && !bookUpdateForm.submitted"
+                    [(ngModel)]="book.authorName">
+                <small class="text-danger"
+                    [class.d-none]="authorName.valid || authorName.untouched || bookUpdateForm.submitted">
+                    Author name is required
+                </small>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    Book Price
+                </label>
+                <input type="text" name="cost" required #cost="ngModel" class="form-control"
+                    [class.is-invalid]="cost.touched && cost.invalid && !bookUpdateForm.submitted"
+                    [(ngModel)]="book.cost">
+                <small class="text-danger"
+                    [class.d-none]="cost.valid || cost.untouched || bookUpdateForm.submitted">Book price is
+                    required
+                </small>
+            </div>
+            <br>
+            <button class="btn btn-primary" type="submit" [disabled]="bookUpdateForm.invalid">
+                Update
+            </button>
+        </form>
+    </div>
+</div>

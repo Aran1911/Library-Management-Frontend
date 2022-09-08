@@ -1,0 +1,211 @@
+<body>
+    <div class="form">
+      <!--form #userForm="ngForm" (ngSubmit)="RegisterUser(userForm)"-->
+      <br />
+      <p class="tittle">User Registration</p>
+  
+      <mat-form-field appearance="fill" class="fname">
+        <mat-label for="firstname" class="fnamelab">First name</mat-label>
+        <input
+          required
+          minlength="3"
+          id="firstname"
+          name="firstname"
+          matInput
+          placeholder="Ex. Abi"
+          ngModel
+          #firstname="ngModel"
+          autocomplete="off"
+        />
+      </mat-form-field>
+      <div
+        class="alert alert-danger"
+        *ngIf="firstname.touched && !firstname.valid"
+      >
+        First name is require
+      </div>
+      <div class="alert" *ngIf="firstname.errors?.['minlength']">
+        First name must be contain more than 3 letters.
+      </div>
+      <br /><br />
+  
+      <mat-form-field appearance="fill" class="lname">
+        <mat-label class="lnamelab">Last name</mat-label>
+        <input
+          minlength="3"
+          required
+          matInput
+          placeholder="Ex. Abi"
+          name="lastname"
+          id="lastname"
+          ngModel
+          #lastname="ngModel"
+          autocomplete="off"
+        />
+      </mat-form-field>
+      <div class="alert alert-danger" *ngIf="lastname.touched && !lastname.valid">
+        Lastname is require
+      </div>
+      <div class="alert" *ngIf="lastname.errors?.['minlength']">
+        Last name must be contain more than 3 letters.
+      </div>
+      <br /><br />
+  
+      <mat-form-field appearance="fill" class="DOB">
+        <mat-label class="DOblab">Date of birth</mat-label>
+        <input
+          required
+          matInput
+          placeholder="Ex. Abi"
+          value=""
+          type="date"
+          autocomplete="off"
+          ngModel
+          #DOB="ngModel"
+        />
+      </mat-form-field>
+      <div class="alert alert-danger" *ngIf="DOB.touched && !DOB.valid">
+        Date of birth is require
+      </div>
+      <br /><br />
+  
+      <mat-form-field appearance="fill" class="NIC">
+        <mat-label class="NIClab">NIC</mat-label>
+        <input
+          required="number"
+          minlength="10"
+          maxlength="12"
+          matInput
+          placeholder="Ex. 200233400197"
+          value=""
+          autocomplete="off"
+          ngModel
+          #NIC="ngModel"
+        />
+      </mat-form-field>
+      <div class="alert alert-danger" *ngIf="NIC.touched && !NIC.valid">
+        NIC Number is require.
+      </div>
+      <div class="alert alert-danger" *ngIf="NIC.errors?.['minlength']">
+        NIC Number must has at least 10 characters.
+      </div>
+      <!--div class="alert" *ngIf="NIC.errors?.['required']"></!--div-->
+      <!--div *ngIf="NIC.errors.required"></div-->
+      <br /><br />
+  
+      <mat-form-field appearance="fill" class="phone">
+        <mat-label class="phonelab">Contact number</mat-label>
+        <input
+          required
+          maxlength="10"
+          minlength="9"
+          matInput
+          placeholder="Phone number"
+          autocomplete="off"
+          ngModel
+          #PhoneNo="ngModel"
+        />
+      </mat-form-field>
+      <div class="alert alert-danger" *ngIf="PhoneNo.touched && !PhoneNo.valid">
+        Phone number is require
+      </div>
+      <div class="alert alert-danger" *ngIf="PhoneNo.errors?.['minlength']">
+        Phone number must has at least 9 characters.
+      </div>
+      <br /><br />
+  
+      <mat-form-field appearance="fill" class="phone">
+        <mat-label class="alterlab">Contact number</mat-label>
+        <input
+          matInput
+          maxlength="10"
+          minlength="9"
+          placeholder="Alternate"
+          #input
+          autocomplete="off"
+          ngModel
+          #APhoneNo="ngModel"
+        />
+      </mat-form-field>
+      <br /><br />
+  
+      <mat-form-field appearance="fill" class="email">
+        <mat-label class="emaillab">Email</mat-label>
+        <input
+          required="email"
+          matInput
+          placeholder="xyz@gmail.com"
+          type="email"
+          autocomplete="off"
+          ngModel
+          #email="ngModel"
+        />
+      </mat-form-field>
+      <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+        Email is require
+      </div>
+      <br /><br />
+  
+      <input
+        type="checkbox"
+        ng-model="myVar"
+        ng-init="myVar = true"
+        class="check"
+      />I accept your term and condition
+  
+      <br /><br />
+      <button
+        mat-button
+        color="primary"
+        class="submit"
+        type="submit"
+        (click)="onSubmit()"
+        *ngIf="
+          firstname.valid &&
+          lastname.valid &&
+          DOB.valid &&
+          NIC.valid &&
+          PhoneNo.valid &&
+          email.valid
+        "
+      >
+        Submit
+      </button>
+      <!--/form-->
+      <br /><br />
+      <button class="back" routerLink="../login">Back</button>
+    </div>
+    <div id="output"></div>
+  </body>
+  
+
+  <div class="d-flex flex-column h-100" id="footer1">
+
+    <footer class="w-100 py-4 flex-shrink-0">
+      <div class="container py-4">
+          <div class="row gy-4 gx-5">
+              <div class="col-lg-4 col-md-6">
+                  <h5 class="h1 text-white">Library</h5>
+                  <p class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                  <p class="small text-muted mb-0">&copy; Copyrights. All rights reserved. <a class="text-primary" href="#">LibraryNAme.com</a></p>
+              </div>
+              <div class="col-lg-2 col-md-6">
+
+                  <ul class="list-unstyled text-muted" >
+                      <li><a href="https://www.youtube.com/"><fa-icon [icon]="faYoutube"  class="icons" id="youtube"></fa-icon></a>
+                      <li><a href="https://www.facebook.com/"><fa-icon [icon]="faFacebook" class="icons" id="facebook"></fa-icon></a></li>
+                      <li><a href="https://www.twitter.com"><fa-icon [icon]="faTwitter" class="icons" id="twitter"></fa-icon></a></li>
+                      <li><a href="https://www.instagram.com"> <fa-icon [icon]="faInstagram" class="icons" id="instagram"></fa-icon></a></li>
+                      <li><a href="https://www.gmail.com"><fa-icon [icon]="faEnvelope" class="icons" id="gmail"></fa-icon></a></li>
+                      <li><a href="https://lk.linkedin.com/"><fa-icon [icon]="faLinkedin" class="icons" id="linkedin"></fa-icon></a></li>
+                      <li><a href="https://lk.linkedin.com/"><fa-icon [icon]="faPinterest" class="icons" id="pinterest"></fa-icon></a></li>
+                  </ul>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                  <h5 class="text-white mb-3">Vision</h5>
+                  <p class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+              </div>
+          </div>
+      </div>
+  </footer>
+</div>

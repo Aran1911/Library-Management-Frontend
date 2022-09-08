@@ -1,0 +1,20 @@
+.card {
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+#cancel,#delete{
+    float: right;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    
+}
+
+#cancel:hover,#delete:hover{
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+#cancel{
+    background-color: #d3d3d3;
+}
