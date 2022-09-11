@@ -1,7 +1,7 @@
-<div class="mt-5">
+<div class="mt-5 " id="books">
   <table class="table table-bordered" style="width: 80%; margin-left: 10%;margin-right: 10%;">
     <thead>
-      <tr>
+      <tr style="text-align: center ; font-size: large;">
         <th>Book Id</th>
         <th>Title</th>
         <th>Author</th>
@@ -10,14 +10,14 @@
         <th>Delete</th>
       </tr>
     </thead>
-    <tbody class="tbody">
-      <tr *ngFor="let b of books">
+    <tbody class="tbody" style="text-align: center ;">
+      <tr *ngFor="let b of books" id="data" >
         <td>{{b.bookId}}</td>
         <td>{{b.title}}</td>
         <td>{{b.authorName}}</td>
         <td>{{b.cost | currency:'USD'}}</td>
-        <td><a [routerLink]="['/update',b.bookId]" class="btn btn-primary">Update</a></td>
-        <td><a [routerLink]="['/delete',b.bookId]" class="btn btn-danger">Delete</a></td>
+        <td><a [routerLink]="['/dashboard/admin/update',b.bookId]" class="btn btn-primary">Update</a></td>
+        <td><a [routerLink]="['/dashboard/admin/delete',b.bookId]" class="btn btn-danger">Delete</a></td>
       </tr>
     </tbody>
   </table>

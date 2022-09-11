@@ -1,17 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import {
-  faYoutube,
-  faFacebook,
-  faTwitter,
-  faInstagram,
-  faLinkedin,
-  faLinkedinIn,
-  faPinterest,
-} from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope, faQrcode } from '@fortawesome/free-solid-svg-icons';
-import { User } from 'src/app/User/user';
 import { UserService } from 'src/app/User/user.service';
 
 @Component({
@@ -20,27 +9,28 @@ import { UserService } from 'src/app/User/user.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  user: User = new User(0, '', '', '');
-  constructor(private _userService: UserService, private _router: Router) {}
+  loginForm: FormGroup = new FormGroup({
+    username: new FormControl(null,[Validators.required])  ,
+    password: new FormControl(null,[Validators.required])
+  })
+  currentUser = false;
+  hide = true;
+  /*
+  login() {
+    console.log(this.loginForm.get('username')?.value+ this.loginForm.get('password')?.value)
+    if( this.loginForm.get('username')?.value == 'Admin' && this.loginForm.get('password')?.value =='Admin123') {
+      this._router.navigateByUrl('/dashboard');
+    } else {
+      alert("Wrong credentials")
+    }
+  }
+  */
 
-  loginForm: FormGroup<any> = new FormGroup({
-    username: new FormControl(null, [Validators.required]),
-    password: new FormControl(null, [Validators.required]),
-  });
+  constructor( private _router: Router, private _userService: UserService) { }
 
-  currentUser: boolean = false;
-  ngOnInit(): void {}
-  faYoutube = faYoutube;
-  faFacebook = faFacebook;
-  faTwitter = faTwitter;
-  faInstagram = faInstagram;
-  faEnvelope = faEnvelope;
-  faQrcode = faQrcode;
-  faLinkedin = faLinkedin;
-  faLinkedinIn = faLinkedinIn;
-  faPinterest = faPinterest;
-
-  onSubmit() {
+  ngOnInit(): void {
+  }
+  login() {
     this._userService
       .login(
         this.loginForm.get('username')?.value,
@@ -54,7 +44,9 @@ export class LoginComponent implements OnInit {
               'username',
               this.loginForm.get('username')?.value
             );
-            this._router.navigateByUrl('/home');
+            this._router.navigateByUrl('/dashboard/home');
+            // console.log(this.loginForm.get('username')?.value+
+            // this.loginForm.get('password')?.value)
             this.currentUser = false;
           } else {
             this.currentUser = true;
@@ -62,7 +54,8 @@ export class LoginComponent implements OnInit {
         },
         (error) => {
           this.currentUser = true;
-          alert("You enterd the wrong password or wrong username. Please check the username and password");
+          alert("You enterd the wrong password or wrong username."+
+          "Please check the username and password");
         }
       );
   }

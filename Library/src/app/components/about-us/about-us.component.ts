@@ -12,15 +12,15 @@ export class AboutUsComponent implements OnInit {
   ngOnInit(): void {}
 
   teamg: Team[] = [
-    { id: 1, name: 'Balakrishna Palla', role: '', details: [] },
-    { id: 2, name: 'Ajay Bhosekar', role: '', details: [] },
+    { id: 1, name: 'Balakrishna Palla', shortName: 'BP', details: [] },
+    { id: 2, name: 'Ajay Bhosekar', shortName:'AB', details: [] },
   ];
 
   team: Team[] = [
-    { id: 3, name: 'Chamoth Mendis', role: 'Team Leader', details: [] },
-    { id: 4, name: 'Dulami', role: '', details: [] },
-    { id: 5, name: 'Rashmi', role: '', details: [] },
-    { id: 6, name: 'Imasha De Saram', role: '', details: [] },
-    { id: 7, name: 'Maran.C', role: '', details: [] },
+    { id: 3, name: 'Chamoth Mendis', shortName: 'CM', details: [] },
+    { id: 4, name: 'Dulami', shortName: 'D', details: [] },
+    { id: 5, name: 'Rashmi', shortName: 'R', details: [] },
+    { id: 6, name: 'Imasha De Saram', shortName: 'ID', details: [] },
+    { id: 7, name: 'Maran.C', shortName: 'MC', details: [] },
   ];
 }

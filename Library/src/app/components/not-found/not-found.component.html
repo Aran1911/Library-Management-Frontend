@@ -1,8 +1,12 @@
-<div class="card">
-    <div class="card-header">
-      <h4>Page not found</h4>
-    </div>
-    <div class="card-body">
-      <a routerLink="../home" class="btn btn-primary">Back to Home</a>
-    </div>
-  </div>
+<div class="message">
+  <h1>Opps!</h1>
+  <h2>404 Not Found</h2>
+  <h5>Sorry, an error has occured, Requested page not found</h5>
+  <br>
+  <button mat-raised-button class="backh" [routerLink] ="['/dashboard/home']" style="margin-right: 3%;">
+    Back to the home
+  </button>
+  <button mat-raised-button class="con">
+    Contact Support
+  </button>
+</div>

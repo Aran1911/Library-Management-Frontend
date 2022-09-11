@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header">
-        <h2>Udate books details</h2>
+        <h4>Udate books details</h4>
     </div>
     <div class="card-body">
         <form #bookUpdateForm="ngForm" novalidate (ngSubmit)="onsubmit()" spellcheck="false">
@@ -25,8 +25,7 @@
                 <input type="text" name="title" required #title="ngModel" class="form-control"
                     [class.is-invalid]="title.touched && title.invalid && !bookUpdateForm.submitted"
                     [(ngModel)]="book.title">
-                <small class="text-danger"
-                    [class.d-none]="title.valid || title.untouched || bookUpdateForm.submitted">
+                <small class="text-danger" [class.d-none]="title.valid || title.untouched || bookUpdateForm.submitted">
                     Book title name is required
                 </small>
             </div>
@@ -59,6 +58,9 @@
             <br>
             <button class="btn btn-primary" type="submit" [disabled]="bookUpdateForm.invalid">
                 Update
+            </button>
+            <button class="btn btn-light" id="cancel" [routerLink]="['/','dashboard','admin','viewAll']" style="margin-right: 2%; background-color: rgb(233, 231, 231);">
+                Cancel
             </button>
         </form>
     </div>

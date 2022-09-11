@@ -14,23 +14,33 @@ import { AddNewBookComponent } from './components/add-new-book/add-new-book.comp
 import { UpdateBookComponent } from './components/update-book/update-book.component';
 import { DeleteBookComponent } from './components/delete-book/delete-book.component';
 import { GallaryComponent } from './components/gallary/gallary.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { UpdateUserComponent } from './components/update-user/update-user.component';
 
 
 const routes: Routes = [
-  {path:'home',component:HomeComponent},
-  {path:'activites',component:ActivitesComponent},
-  {path:'admin',component:AdminComponent},
-  {path:'login',component:LoginComponent},
-  {path:'gallary',component:GallaryComponent},
-  {path:'donate',component:DonateComponent},
-  {path:'about',component:AboutUsComponent},
-  {path:'forgotpassword',component:ForgotPasswordComponent},
-  {path:'newUser',component:NewUserComponent},
-  {path:'viewAll',component:ViewAllBooksComponent},
-  {path:'addNew',component:AddNewBookComponent},
-  {path:'update/:id',component:UpdateBookComponent},
-  {path:'delete/:id',component:DeleteBookComponent},
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  {
+    path: 'dashboard', component: DashboardComponent, children: [
+      { path: 'home', component: HomeComponent },
+      { path: 'activites', component: ActivitesComponent },
+      { path: 'gallary', component: GallaryComponent },
+      { path: 'donate', component: DonateComponent },
+      { path: 'about', component: AboutUsComponent },
+      {
+        path: 'admin', component: AdminComponent, children: [
+          { path: 'viewAll', component: ViewAllBooksComponent },
+          { path: 'addNew', component: AddNewBookComponent },
+          { path: 'update/:id', component: UpdateBookComponent },
+          { path: 'delete/:id', component: DeleteBookComponent },
+        ]
+      },
+    ]
+  },
+  { path: 'login', component: LoginComponent },
+  { path: 'forgotpassword', component: ForgotPasswordComponent },
+  { path:'updateUser/:email', component: UpdateUserComponent},
+  { path: 'newUser', component: NewUserComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent },
 ];
 

@@ -1,21 +1,25 @@
-input{
-  width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
-}
-.card{
-  width: 50%;
-  margin-top: 05%;
-  margin-bottom: 10%;
-  margin-left: 15%;
-  margin-right: 15%;
-  
+.login{
+  width: 36%;
+  margin-left: 32%;
+  margin-right: 32%;
+  /* height: 60%; */
+  margin-top: 5%;
+  border: solid #F1EAEA;
+  padding-left: 2%;
+  padding-right: 2%;
+  /* padding-top: 3%; */
   border-radius: 10px;
 }
-.card:hover{
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+
+.login:hover{
+  box-shadow:20px 20px 50px 10px lightgray;
 }
+
 button{
-  float: right;
-  margin-right: 10%;
+  width: 100%;
+  /* margin-left: 3%; */
+  /* margin-right: 3%; */
+  
 }
+
+

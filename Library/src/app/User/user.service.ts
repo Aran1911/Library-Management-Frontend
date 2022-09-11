@@ -10,9 +10,17 @@ export class UserService {
 
   constructor( private _http:HttpClient) { }
 
-  baseUrl: string = "http://localhost:2000/user/get/";
+  baseUrl: string = "http://localhost:2000/user";
 
   login(username: string, password: string ): Observable<User> {
-    return this._http.get<User>(this.baseUrl+username+"/"+password).pipe(map (resp => resp));
+    return this._http.get<User>(this.baseUrl+"/get"+"/"+username+"/"+password).pipe(map (resp => resp));
+  }
+
+  getByEmail(email: string): Observable<User> {
+    return this._http.get<User>(this.baseUrl+"/email/"+email).pipe(map( resp => resp));
+  }
+
+  update( user: User): Observable<User> {
+    return this._http.put<User>(this.baseUrl+"/update/"+user.username,user).pipe(map(resp => resp));
   }
 }

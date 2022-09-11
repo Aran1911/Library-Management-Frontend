@@ -28,6 +28,10 @@ import { MatTableModule } from '@angular/material/table';
 import { DeleteBookComponent } from './components/delete-book/delete-book.component';
 import { UserComponent } from './User/user/user.component';
 import { GallaryComponent } from './components/gallary/gallary.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { UpdateUserComponent } from './components/update-user/update-user.component';
+
 
 
 //I keep the new line
@@ -49,6 +53,8 @@ import { GallaryComponent } from './components/gallary/gallary.component';
     DeleteBookComponent,
     UserComponent,
     GallaryComponent,
+    DashboardComponent,
+    UpdateUserComponent,
     
   ],
   imports: [
@@ -65,6 +71,7 @@ import { GallaryComponent } from './components/gallary/gallary.component';
     IgxAvatarModule,
     MatTableModule,
     BrowserAnimationsModule,
+    MatMenuModule
     
   ],
   providers: [],

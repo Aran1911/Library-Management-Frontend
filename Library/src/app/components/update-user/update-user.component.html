@@ -1,0 +1,67 @@
+<div class="card">
+    <div class="card-header">
+        <h4>Udate user details</h4>
+    </div>
+    <div class="card-body">
+        <form #userUpdateForm="ngForm" novalidate (ngSubmit)="onsubmit()" spellcheck="false">
+
+            <div class="form-group">
+                <label>
+                    User Id
+                </label>
+                <input type="text" name="userId" required #userId="ngModel" class="form-control"
+                    [class.is-invalid]="userId.touched && userId.invalid && !userUpdateForm.submitted"
+                    [(ngModel)]="user.userId">
+                <small class="text-danger"
+                    [class.d-none]="userId.valid || userId.untouched || userUpdateForm.submitted">
+                    user Id is required
+                </small>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    Username
+                </label>
+                <input type="text" name="title" required #title="ngModel" class="form-control"
+                    [class.is-invalid]="title.touched && title.invalid && !userUpdateForm.submitted"
+                    [(ngModel)]="user.username">
+                <small class="text-danger" [class.d-none]="title.valid || title.untouched || userUpdateForm.submitted">
+                    username is required
+                </small>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    Email
+                </label>
+                <input type="text" name="authorName" required #authorName="ngModel" class="form-control"
+                    [class.is-invalid]="authorName.touched && authorName.invalid && !userUpdateForm.submitted"
+                    [(ngModel)]="user.email">
+                <small class="text-danger"
+                    [class.d-none]="authorName.valid || authorName.untouched || userUpdateForm.submitted">
+                    Email is required
+                </small>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    Password
+                </label>
+                <input type="text" name="cost" required #cost="ngModel" class="form-control"
+                    [class.is-invalid]="cost.touched && cost.invalid && !userUpdateForm.submitted"
+                    [(ngModel)]="user.password">
+                <small class="text-danger"
+                    [class.d-none]="cost.valid || cost.untouched || userUpdateForm.submitted">user price is
+                    required
+                </small>
+            </div>
+            <br>
+            <button class="btn btn-primary" type="submit" [routerLink]="['/home']" [disabled]="userUpdateForm.invalid">
+                Update
+            </button>
+            <button class="btn btn-light" id="cancel" [routerLink]="['/home']" style="margin-right: 2%; background-color: rgb(233, 231, 231);">
+                Cancel
+            </button>
+        </form>
+    </div>
+</div>

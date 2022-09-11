@@ -20,12 +20,12 @@ export class DeleteBookComponent implements OnInit {
   ngOnInit(): void {
     this._activatedRoute.params.subscribe((data) => {
       this.bookId = data['id'];
-      console.log('Book id to be delete');
+      // console.log('Book id to be delete');
 
       this._service.deleteBook(this.bookId).subscribe(
         (data) => {
-          alert('Product deleted');
-          this._router.navigateByUrl('viewAll');
+          alert('Book details deleted');
+          this._router.navigateByUrl('/dashboard/admin/viewAll');
         },
         (error) => {
           alert('Error occured: ' + error.message);

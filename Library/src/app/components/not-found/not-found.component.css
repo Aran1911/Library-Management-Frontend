@@ -1,0 +1,11 @@
+.message {
+    text-align: center;
+}
+
+.backh {
+    background-color: #0080ff;
+}
+
+button:hover {
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}

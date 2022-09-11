@@ -28,14 +28,11 @@ export class UpdateBookComponent implements OnInit {
     console.log(this.book);
     this._service.updateBook(this.book).subscribe(data=>{
       alert("Book updated sucessfully");
-      this._router.navigateByUrl("/viewAll");
+      this._router.navigateByUrl("/dashboard/admin/viewAll");
       this.book = new Book (0,"","",0.0);
     },
     error => {
       alert("Book details updation is failed")
   })
-  }
-
-
-  
+  }  
 }

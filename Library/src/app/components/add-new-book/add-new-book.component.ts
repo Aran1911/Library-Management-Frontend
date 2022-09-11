@@ -20,7 +20,7 @@ export class AddNewBookComponent implements OnInit {
       (data) => {
         alert('Book added sucessfully');
         this.book = new Book(0, '', '', 0.0);
-        this._router.navigateByUrl('/viewAll');
+        this._router.navigateByUrl('/dashboard/admin/viewAll');
       },
       (error) => {
         alert('Book adding process is failed');
